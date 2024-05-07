@@ -96,10 +96,7 @@ class _SignInPageState extends State<SignInPage> {
       onPressed: () async {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          String? message = await context
-              .read<UserAuthProvider>()
-              .authService
-              .signIn(email!, password!);
+          String? message = await context.read<UserAuthProvider>().authService.signIn(email!, password!);
 
           print(message);
           print(showSignInErrorMessage);
